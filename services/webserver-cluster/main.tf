@@ -12,7 +12,7 @@ resource "aws_launch_configuration" "example" {
   security_groups = [aws_security_group.instance.id]
   user_data = <<-EOF
   #!/bin/bash
-  echo "<h1>Hello, World!</h1>" >> index.html
+  echo "<h1>Hello, Fucking World!</h1>" >> index.html
   echo "<p>DB address: ${data.terraform_remote_state.db.outputs.address}</p>" >> index.html
   echo "<p>DB port: ${data.terraform_remote_state.db.outputs.port}</p>" >> index.html
   nohup busybox httpd -f -p ${var.server_port} &
